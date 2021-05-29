@@ -166,7 +166,7 @@ local coordinates = settings.openweathermap_coordinates
 local api_key = settings.openweathermap_api_key
 local show_hourly_forecast = true
 local show_daily_forecast = true
-local units = "metric"
+local units = "imperial"
 
 local url =
         ('https://api.openweathermap.org/data/2.5/onecall' ..
