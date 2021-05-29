@@ -8,7 +8,7 @@ local btn_bg_container = require("widgets.button-active-container")
 local create_clock = function(s)
 
 	local clock_format = nil
-	clock_format = '<span font="Ubuntu 12">%I:%M %p</span>'
+	clock_format = '<span font="Ubuntu 12">%H:%M</span>'
 
 	local clock_widget = wibox.widget.textclock(clock_format, 60)
 
