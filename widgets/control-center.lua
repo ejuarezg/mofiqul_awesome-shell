@@ -57,7 +57,7 @@ local control_center = function (s)
 		require("widgets.buttons.global-floating-mode"),
 		require("widgets.buttons.screen-shot")(s),
 		require("widgets.buttons.microphone"),
-		require("widgets.buttons.software-update"),
+		-- require("widgets.buttons.software-update"),
 		spacing = beautiful.widget_margin,
 		layout = wibox.layout.fixed.horizontal
 	}
