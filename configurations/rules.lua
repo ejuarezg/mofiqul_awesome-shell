@@ -66,11 +66,11 @@ awful.rules.rules = {
 	},
 	{
 		rule = { instance = "plugin-container" },
-	 	roperties = { floating = true }
+	 	properties = { floating = true }
   	},
 	{
 		rule = { role = "_NET_WM_STATE_FULLSCREEN" },
-  		roperties = { floating = true }
+  		properties = { floating = true }
   	},
 	{
 		rule = { class= "Simple-scan" },
