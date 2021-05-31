@@ -97,7 +97,7 @@ if stdout:match("Battery detected") then
 	}
 else
 	label:set_text("AC")
-	icon.image(beautiful.icon_ac)
+	-- icon.image(beautiful.icon_ac)
 	icon:emit_signal("widget::redraw_needed")
 	battery_panel_indicator:set_image(beautiful.icon_ac)
 end
