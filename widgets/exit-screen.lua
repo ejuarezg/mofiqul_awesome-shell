@@ -324,13 +324,16 @@ local exit_screen_grabber = awful.keygrabber {
 		elseif key == 'l' then
 			lock_command()
 
+		elseif key == 'x' then
+			lock_command()
+
 		elseif key == 'p' then
 			poweroff_command()
 
 		elseif key == 'r' then
 			reboot_command()
 
-		elseif key == 'Escape' or key == 'q' or key == 'x' then
+		elseif key == 'Escape' or key == 'q' then
 			awesome.emit_signal('module::exit_screen:hide')
 		end
 	end
