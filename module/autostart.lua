@@ -6,7 +6,7 @@ local config_dir = filesystem.get_configuration_dir()
 local default_apps = require("configurations.default-apps")
 local startup_apps = {
 	"picom -b --experimental-backends --config " .. config_dir .. "configurations/picom.conf",
-	"redshift -t 5700:3400 -l 26.1445:91.7362",
+	"redshift -t 6500:3500 -l " .. os.getenv("GEOLOCATION"),
 	"udiskie",
 	"xidlehook --not-when-fullscreen --not-when-audio  --timer 300 'xbacklight -set 1' 'xbacklight -set 50' --timer 60 'xbacklight -set 50;" ..default_apps.lock_screen .." ' '' --timer 900 'systemctl suspend'  ''",
 	-- "$HOME/.local/bin/xinput-tab",
