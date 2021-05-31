@@ -60,7 +60,7 @@ local create_clock = function(s)
 		screen = s,
 		placement = function (w)
 			awful.placement.bottom_right(w, {
-				margins = {left = 0, top = 5, bottom = beautiful.wibar_height + dpi(5), right = dpi(5)}
+				margins = {left = 0, top = 5, bottom = dpi(5), right = dpi(5)}
 			})
 		end,
 		widget = {
