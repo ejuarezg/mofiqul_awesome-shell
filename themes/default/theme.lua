@@ -25,7 +25,7 @@ colors.red = "#F44747"
 colors.blue = "#1B6ACB"
 colors.green = "#2EA043"
 colors.yellow = "#F36351"
-colors.orange = "#fc9905"
+colors.orange = "#FA4616"
 
 if theme.mode == "dark" then
     colors.bg = "#212126EE"
