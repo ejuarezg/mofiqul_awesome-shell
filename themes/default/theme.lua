@@ -240,7 +240,7 @@ theme.menu_width  = dpi(200)
 
 -- Wibar
 theme.wibar_height = dpi(28)
-theme.wibar_position = "bottom"
+theme.wibar_position = "top"
 theme.wibar_icon_size = dpi(16)
 
 -- Titlebar
