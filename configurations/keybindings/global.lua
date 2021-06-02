@@ -13,7 +13,7 @@ local globalkeys = gears.table.join(
 	),
     awful.key(
 		{ modkey,},
-		"Escape",
+		"x",
 		awful.tag.history.restore,
         {description = "go back", group = "tag"}
 	),
