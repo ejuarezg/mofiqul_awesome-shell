@@ -142,7 +142,7 @@ local globalkeys = gears.table.join(
 	),
     awful.key(
 		{ modkey, "Shift"},
-		"e",
+		"x",
 		function ()
 			awesome.emit_signal('module::exit_screen:show')
 		end,
@@ -240,8 +240,8 @@ local globalkeys = gears.table.join(
 	),
 
     awful.key(
-		{ modkey }, 
-		"x",
+		{ modkey, "Shift"}, 
+		"e",
         function ()
             awful.prompt.run {
                 prompt       = "Run Lua code: ",
