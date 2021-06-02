@@ -62,7 +62,7 @@ awful.rules.rules = {
     -- Set Firefox to always map on the tag named "1" on screen 1.
     {
 		rule = { class = "firefox" },
-    	properties = { screen = 1, tag = "WEB" }
+    	properties = { screen = 1, tag = awful.screen.focused().tags[1] }
 	},
 	{
 		rule = { instance = "plugin-container" },
