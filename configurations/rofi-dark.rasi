@@ -27,7 +27,7 @@ window {
 	height:                         80%;
 	anchor:                         south;
     location:                       south;
-	y-offset:                       -30px;
+	y-offset:                       -376px;
 }
 
 prompt {
