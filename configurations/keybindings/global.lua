@@ -125,14 +125,16 @@ local globalkeys = gears.table.join(
     awful.key(
 		{ modkey,},
 		"q",
-		function () awful.spawn(terminal) end,
-        {description = "open a terminal", group = "launcher"}
+		function () awful.spawn(terminal_tagged) end,
+        {description = "open a terminal in terminal tag", group = "launcher"}
 	),
+	-- TODO: This shortcut does nothing at the moment. A dropdown terminal
+	-- needs to be implemented.
     awful.key(
 		{ "Control",},
 		"q",
-		function () awful.spawn(terminal) end,
-        {description = "open a terminal", group = "launcher"}
+		function ()  end,
+        {description = "open a dropdown terminal", group = "launcher"}
 	),
     awful.key(
 		{ modkey, "Shift" },

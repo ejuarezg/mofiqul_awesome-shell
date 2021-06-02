@@ -79,6 +79,9 @@ awful.rules.rules = {
 	{
 		rule = { class= "feh" },
 		properties = { width = 800, height = 600}
-	}
-
+	},
+    {
+		rule = { class = "Alacritty", instance = "tagged" },
+    	properties = { screen = 1, tag = awful.screen.focused().tags[3] }
+	},
 }

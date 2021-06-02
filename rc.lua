@@ -41,6 +41,7 @@ end
 beautiful.init( gears.filesystem.get_configuration_dir() .. "/themes/default/theme.lua")
 
 terminal = "alacritty"
+terminal_tagged = "alacritty --class tagged,Alacritty"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
