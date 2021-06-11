@@ -68,13 +68,13 @@ scrollbar{
 
 listview {
     background-color:               @background-alt;
-    columns:                        5;
+    columns:                        6;
     lines:                          3;
     spacing:                        2%;
     cycle:                          false;
     dynamic:                        true;
     layout:                         vertical;
-	scrollbar:                      false;
+	scrollbar:                      true;
 }
 
 mainbox {
@@ -96,7 +96,7 @@ element {
 }
 
 element-icon {
-    size:                           64px;
+    size:                           96;
     border:                         0px;
 }
 
@@ -105,7 +105,7 @@ element-text {
     horizontal-align:               0.5;
     vertical-align:                 0.5;
     margin:                         0.5% 0.5% -0.5% 0.5%;
-	font:                           "Ubuntu 9";
+	font:                           "Ubuntu 10";
 }
 
 element selected {
