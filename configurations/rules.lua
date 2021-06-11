@@ -84,4 +84,8 @@ awful.rules.rules = {
 		rule = { class = "Alacritty", instance = "tagged" },
     	properties = { screen = 1, tag = "" }
 	},
+    {
+		rule = { class = "Alacritty", instance = "spotify" },
+    	properties = { screen = 1, tag = "" }
+	},
 }
