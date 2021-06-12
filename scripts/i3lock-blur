@@ -7,6 +7,7 @@ T='#569cd6FF'  # text
 W='#F44747FF'  # wrong
 V='#FFAF00FF'  # verifying
 VT='#608B4EFF'
+HL='#FA4616FF'
 
 
 i3lock                          \
@@ -32,15 +33,14 @@ i3lock                          \
     --time-color=$C             \
     --date-color=$C             \
     --layout-color=$T           \
-    --keyhl-color=$VT           \
+    --keyhl-color=$HL           \
     --bshl-color=$W             \
     \
     --screen 1                  \
     --blur 5                    \
     --clock                     \
     --indicator                 \
-    --time-str="%I:%M:%S %p"    \
-    --date-str="%A %d %b"       \
+    --date-str="%A, %B %d"      \
     --wrong-text="incorrect!"   \
     --verif-text="verifying"    \
     --time-size=75              \
