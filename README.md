@@ -16,8 +16,9 @@ This is a collection of [awesome wm](https://awesomewm.org/) configuration files
 8. ffmpeg
 9. [iw](https://archlinux.org/packages/core/x86_64/iw/) for networks
 10. [xidlehook](https://github.com/jD91mZM2/xidlehook) (for autometic lock and suspend)
-11. [i3lock-fancy](https://github.com/meskarune/i3lock-fancy)
+11. [i3lock-color](https://github.com/Raymo111/i3lock-color)
 12. curl
+13. [redshift](https://archlinux.org/packages/community/x86_64/redshift/)
 
 ## ⬇️ Installation
 Clone the this repository 
