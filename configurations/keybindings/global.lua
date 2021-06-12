@@ -117,10 +117,16 @@ local globalkeys = gears.table.join(
 
     -- Standard program
     awful.key(
-		{ modkey,},
+		{ modkey, "Shift"},
 		"Return",
 		function () awful.spawn(terminal) end,
         {description = "open a terminal", group = "launcher"}
+	),
+    awful.key(
+		{ modkey,},
+		"Return",
+		function () awful.spawn(terminal_tagged) end,
+        {description = "open a terminal in terminal tag", group = "launcher"}
 	),
     awful.key(
 		{ modkey,},
