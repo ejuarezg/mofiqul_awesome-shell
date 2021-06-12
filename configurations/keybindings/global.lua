@@ -63,27 +63,23 @@ local globalkeys = gears.table.join(
     ),
     awful.key(
 		{ modkey,}, 
-		"Right",
-        function ()
-            awful.client.focus.byidx(1)
-        end,
-        {description = "focus next by index", group = "client"}
-    ),
-    awful.key(
-		{ modkey,}, 
 		"k",
         function ()
             awful.client.focus.byidx(-1)
         end,
         {description = "focus previous by index", group = "client"}
     ),
-    awful.key(
-		{ modkey,}, "Left",
-        function ()
-            awful.client.focus.byidx(-1)
+    -- Move to the next and previous tags
+    awful.key({ modkey }, "Left",
+        function()
+            awful.tag.viewprev()
         end,
-        {description = "focus previous by index", group = "client"}
-    ),
+        {description = "move to tag on the left", group = "tag"}),
+    awful.key({ modkey }, "Right",
+        function()
+            awful.tag.viewnext()
+        end,
+        {description = "move to tag on the right", group = "tag"}),
 	-- Relative focus
     awful.key(
 		{ modkey, "Control" },
