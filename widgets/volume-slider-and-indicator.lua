@@ -64,13 +64,13 @@ local slider_wrapped = wibox.widget{
 
 local update_volume_icon = function()
 	awful.spawn.easy_async(
-		[[ sh -c "pacmd list-sinks | awk '/muted/ { print \$2 }'"]],
+		[[ sh -c "amixer -D pulse sget Master"]],
 		function(stdout)
-			if stdout:match("yes") then
+			if stdout:match('%[off%]') then
 				icon:set_image(beautiful.volume_muted_icon)
 				button:set_bg(beautiful.bg_button)
 				panel_volume_indicator:set_image(beautiful.volume_muted_icon)
-			elseif stdout:match("no") then
+			elseif stdout:match('%[on%]') then
 				icon:set_image(beautiful.volume_normal_icon)
 				button:set_bg(beautiful.button_active)
 				panel_volume_indicator:set_image(beautiful.volume_normal_icon)
