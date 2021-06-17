@@ -28,7 +28,7 @@ local update_profile_pic = function()
 		config_dir .. "/utilities/profile-image",
 		function(stdout)
 			stdout = stdout:gsub('%\n','')
-			if not stdout:match('default') then
+			if not (stdout == 'default') then
 				profile_imagebox:set_image(stdout)
 			else
 				profile_imagebox:set_image(beautiful.face_image)
