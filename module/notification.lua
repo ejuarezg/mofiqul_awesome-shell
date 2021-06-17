@@ -92,7 +92,7 @@ naughty.connect_signal("request::display", function (n)
 
 	local app_name = wibox.widget{
 		markup = n.app_name or "System Notification",
-		font = "Ubuntu Bold 10",
+		font = "Sans Bold 10",
 		align = 'center',
 		valign = 'center',
 		widget = wibox.widget.textbox

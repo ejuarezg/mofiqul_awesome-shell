@@ -9,12 +9,12 @@ local theme = {}
 -- Theme name, available values "dark" and "glassy"
 theme.mode = "dark"
 -- Fonts
-theme.font = "Ubuntu 10"
-theme.font_bold = "Ubuntu 10"
-theme.font_large = "Ubuntu 12"
-theme.font_large_bold = "Ubuntu bold 12"
-theme.font_small =  "Ubuntu 9"
-theme.font_extra_small =  "Ubuntu 9"
+theme.font = "Sans 10"
+theme.font_bold = "Sans 10"
+theme.font_large = "Sans 12"
+theme.font_large_bold = "Sans bold 12"
+theme.font_small =  "Sans 9"
+theme.font_extra_small =  "Sans 9"
 theme.taglist_font = "Ubuntu Nerd Font 12"
 
 -- Colors Definations

@@ -9,7 +9,7 @@ local helpers = require("libs.helpers")
 local config_dir = gears.filesystem.get_configuration_dir()
 local profile_name = wibox.widget {
 	markup = 'user@hostname',
-	font = 'Ubuntu Bold 12',
+	font = 'Sans Bold 12',
 	align = 'center',
 	valign = 'center',
 	widget = wibox.widget.textbox
@@ -63,7 +63,7 @@ update_user_name()
 local build_power_button = function(name, icon, callback)
 	local power_button_label= wibox.widget {
 		text = name,
-		font = 'Ubuntu 10',
+		font = 'Sans 10',
 		align = 'center',
 		valign = 'center',
 		widget = wibox.widget.textbox
@@ -131,7 +131,7 @@ local cancel_button = wibox.widget{
 			widget = wibox.container.margin,
 			{
 				text = "Cancel",
-				font = "Ubuntu 12",
+				font = "Sans 12",
 				widget = wibox.widget.textbox
 			}
 		}

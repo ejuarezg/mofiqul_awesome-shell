@@ -43,7 +43,7 @@ entry {
     placeholder-color:              @foreground;
     expand:                         true;
     horizontal-align:               0;
-	font:                           "Ubuntu  light 10";
+	font:                           "Sans  light 10";
     placeholder:                    "Type to search";
     padding:                        0.30% 0% 0% 0.25%;
     blink:                          true;
@@ -105,7 +105,7 @@ element-text {
     horizontal-align:               0.5;
     vertical-align:                 0.5;
     margin:                         0.5% 0.5% -0.5% 0.5%;
-	font:                           "Ubuntu 9";
+	font:                           "Sans 9";
 }
 
 element selected {

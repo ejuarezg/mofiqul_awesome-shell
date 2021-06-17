@@ -28,7 +28,7 @@ styles.focus = {
 styles.header = {
 	fg_color = beautiful.fg_normal,
 	bg_color = "#00000000",
-    markup = function(t) return '<span font="Ubuntu bold 12">' .. t .. '</span>' end,
+    markup = function(t) return '<span font="Sans bold 12">' .. t .. '</span>' end,
 	shape = beautiful.widget_shape
 }
 

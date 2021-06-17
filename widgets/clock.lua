@@ -8,7 +8,7 @@ local btn_bg_container = require("widgets.button-active-container")
 local create_clock = function(s)
 
 	local clock_format = nil
-	clock_format = '<span font="Ubuntu 12">%H:%M</span>'
+	clock_format = '<span font="Sans 12">%H:%M</span>'
 
 	local clock_widget = wibox.widget.textclock(clock_format, 60)
 
@@ -39,8 +39,8 @@ local create_clock = function(s)
 
 
 	local popup_height = s.geometry.height - (beautiful.wibar_height + dpi(10))
-	local time_format = "<span font='Ubuntu light 36'> %I:%M </span> "
-	local date_formate = "<span font='Ubuntu bold 12'> %A, %B, %d </span>"
+	local time_format = "<span font='Sans light 36'> %I:%M </span> "
+	local date_formate = "<span font='Sans bold 12'> %A, %B, %d </span>"
 	local time = wibox.container.place(wibox.widget.textclock(time_format, 60))
 	local date = wibox.container.place(wibox.widget.textclock(date_formate, 60))
 	

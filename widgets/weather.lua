@@ -46,13 +46,13 @@ local current_weather_widget = wibox.widget{
 				{
 					id = "description",
 					text = "Mostly cloudy",
-					font = "Ubuntu bold 9",
+					font = "Sans bold 9",
 					widget = wibox.widget.textbox
 				},
 				{
 					id = "humidity",
 					text = "Humidity: 80%",
-					font = "Ubuntu light 9",
+					font = "Sans light 9",
 					widget = wibox.widget.textbox
 				},
 				layout = wibox.layout.fixed.vertical
@@ -69,13 +69,13 @@ local current_weather_widget = wibox.widget{
 				id = "tempareture_current",
 				markup = "20<sup><span>°</span></sup>",
 				align = "right",
-				font = "Ubuntu bold 16",
+				font = "Sans bold 16",
 				widget = wibox.widget.textbox
 			},
 			{
 				id = "feels_like",
 				markup = "Feels like: 19<sup><span>°</span></sup>",
-				font = "Ubuntu light 8",
+				font = "Sans light 8",
 				widget = wibox.widget.textbox
 			},
 			spacing = dpi(-6),
@@ -93,7 +93,7 @@ local hourly_widget = function ()
 			{
 				id = "time",
 				text = "12PM",
-				font = "Ubuntu light 9",
+				font = "Sans light 9",
 				widget = wibox.widget.textbox
 			},
 			widget = wibox.container.place
@@ -113,7 +113,7 @@ local hourly_widget = function ()
 			{
 				id = "tempareture",
 				markup = "1<sup><span>°</span></sup>",
-				font = "Ubuntu light 9",
+				font = "Sans light 9",
 				widget = wibox.widget.textbox
 			},
 			widget = wibox.container.place

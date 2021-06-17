@@ -76,7 +76,7 @@ function create_button.circle_big(icon_path)
 				{
 					id = "label",
 					text = "Off",
-					font = "Ubuntu 8",
+					font = "Sans 8",
 					widget = wibox.widget.textbox
 				},
 				forced_width = dpi(50),
@@ -95,7 +95,7 @@ end
 function create_button.button_with_label(name, icon)
 	local button_label= wibox.widget {
 		text = name,
-		font = 'Ubuntu 10',
+		font = 'Sans 10',
 		align = 'center',
 		valign = 'center',
 		widget = wibox.widget.textbox
