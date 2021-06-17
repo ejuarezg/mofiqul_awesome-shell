@@ -8,25 +8,17 @@ user_profile_dir="${awesome_dir}themes/default/icons/system/"
 
 accountsservice_user_icons="/var/lib/AccountsService/icons/${USER}"
 
-# Check if user image exists
-if [ -f "${user_profile_dir}${USER}.png" ];
+# Check if user image "user.png" exists. If so, then the image in
+# AccountsService directory or the default image will not be used.
+if [ -f "${user_profile_dir}user.png" ];
 then
-	if [ -f "${accountsservice_user_icons}" ];
-	then
-		if ! cmp --silent "${user_profile_dir}${USER}.png" "${accountsservice_user_icons}";
-		then
-			cp "${accountsservice_user_icons}" "${user_profile_dir}${USER}.png"
-		fi
-		printf "${user_profile_dir}${USER}.png"
-	else
-		printf "${user_profile_dir}${USER}.png"
-	fi
+	printf "${user_profile_dir}user.png"
 	exit;
 else
 	if [ -f "${accountsservice_user_icons}" ];
 	then
-		cp "${accountsservice_user_icons}" "${user_profile_dir}${USER}.png"
-		printf "${user_profile_dir}${USER}.png"
+		cp "${accountsservice_user_icons}" "${user_profile_dir}user.png"
+		printf "${user_profile_dir}user.png"
 		exit;
 	else
 		printf "default"
