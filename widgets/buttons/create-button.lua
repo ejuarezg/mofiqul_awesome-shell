@@ -76,7 +76,7 @@ function create_button.circle_big(icon_path)
 				{
 					id = "label",
 					text = "Off",
-					font = "Sans 8",
+					font = "Sans 9",
 					widget = wibox.widget.textbox
 				},
 				forced_width = dpi(50),
