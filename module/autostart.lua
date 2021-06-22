@@ -12,6 +12,7 @@ local startup_apps = {
 	-- "$HOME/.local/bin/xinput-tab",
 	-- "xbacklight -set 45"
     -- Add your startup programs here
+    "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1",
 }
 
 
