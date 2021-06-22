@@ -10,9 +10,9 @@ local startup_apps = {
 	"udiskie",
 	"xidlehook --not-when-fullscreen --not-when-audio  --timer 300 'xbacklight -set 1' 'xbacklight -set 50' --timer 60 'xbacklight -set 50;" ..default_apps.lock_screen .." ' '' --timer 900 'systemctl suspend'  ''",
 	-- "$HOME/.local/bin/xinput-tab",
-	-- "xbacklight -set 45"
+	-- "xbacklight -set 45",
     -- Add your startup programs here
-    "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1",
+    "pgrep polkitd || /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1",
 }
 
 
