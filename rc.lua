@@ -220,6 +220,6 @@ root.keys(globalkeys)
 require("module.signals")
 require("configurations.rules")
 require("widgets.exit-screen")
-require("module.notification")
+require("module.notifications")
 require("module.autostart")
 
