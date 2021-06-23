@@ -3,13 +3,9 @@ local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 local gears = require("gears")
 local gfs = require("gears.filesystem")
+local helpers = require("libs.helpers")
 local theme_path = gfs.get_configuration_dir () .. "themes/default/"
 local theme = {}
-
-local function file_exists(name)
-    local f = io.open(name, "r")
-    if f ~= nil then io.close(f) return name else return nil end
-end
 
 -- Theme name, available values "dark" and "glassy"
 theme.mode = "dark"
@@ -164,7 +160,7 @@ theme.icon_system_restart = theme_path .. "icons/system/system-restart.svg"
 theme.icon_system_sleep = theme_path .. "icons/system/system-suspend.svg"
 theme.icon_system_screen_lock = theme_path .. "icons/system/system-lock-screen.svg"
 theme.icon_system_logout = theme_path .. "icons/system/system-log-out.svg"
-theme.face_image = file_exists(theme_path .. "icons/system/user.png")
+theme.face_image = helpers.file_exists(theme_path .. "icons/system/user.png")
     or theme_path .. "icons/system/default.png"
 
 theme.icon_bell = theme_path .. "icons/notifications.svg"
