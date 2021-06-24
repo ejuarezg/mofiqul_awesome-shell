@@ -220,6 +220,10 @@ root.keys(globalkeys)
 require("module.signals")
 require("configurations.rules")
 require("widgets.exit-screen")
-require("module.notifications")
+require("module.notifications").init()
 require("module.autostart")
 
+-- >> Daemons
+-- Make sure to initialize it last in order to allow all widgets to connect to
+-- their needed evil signals.
+require("evil")
