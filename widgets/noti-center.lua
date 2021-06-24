@@ -343,6 +343,7 @@ end
 notifbox_layout:insert(1, empty_notifbox)
 
 naughty.connect_signal("added", function(n)
+	if n.app_name == 'Volume Notification' then return end
 
 	if #notifbox_layout.children == 1 and remove_notifbox_empty then
 		notifbox_layout:reset(notifbox_layout)
