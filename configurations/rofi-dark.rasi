@@ -68,13 +68,13 @@ scrollbar{
 
 listview {
     background-color:               @background-alt;
-    columns:                        6;
+    columns:                        5;
     lines:                          3;
     spacing:                        2%;
     cycle:                          false;
     dynamic:                        true;
     layout:                         vertical;
-	scrollbar:                      true;
+	scrollbar:                      false;
 }
 
 mainbox {
@@ -96,7 +96,7 @@ element {
 }
 
 element-icon {
-    size:                           96;
+    size:                           96px;
     border:                         0px;
 }
 
