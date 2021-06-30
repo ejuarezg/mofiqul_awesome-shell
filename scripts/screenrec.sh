@@ -5,7 +5,12 @@
 # Info: https://trac.ffmpeg.org/wiki/Capture/Desktop
 # --------------------------------------------
 # This directory will be created automatically if it does not exist
-RECORDINGS_DIR=~/Videos/Recordings
+if [ -z "$1" ]; then
+    RECORDINGS_DIR="$HOME/Videos/Recordings"
+else
+    RECORDINGS_DIR="$(dirname "$1")"
+    BASENAME="$(basename "$1")"
+fi
 # --- Resolution ---
 # >> Manually
 # SCREEN_RESOLUTION=1920x1080
@@ -20,7 +25,7 @@ AUDIO=" -f pulse -ac 2 -i default "
 # AUDIO=" f alsa -ac 2 -i hw:0 "
 
 # Notification icon path
-REC_ICON_PATH=~/.config/awesome/icons/linebit/playerctl_next.png
+REC_ICON_PATH="$HOME/.config/awesome/themes/default/icons/48x48/camera-on.svg"
 # --------------------------------------------
 
 # Create directory if needed
@@ -32,9 +37,11 @@ fi
 pid="$(ps -o pid,command ax | grep "ffmpeg" | grep "x11grab" | awk '{print $1}')"
 if [ -z "$pid" ]; then
     TIMESTAMP="$(date +%Y.%m.%d-%H.%M.%S)"
-    FILENAME=$RECORDINGS_DIR/$TIMESTAMP.screenrec.mp4
+    FILENAME="$RECORDINGS_DIR/${BASENAME:-$TIMESTAMP.screenrec.mp4}"
 
-    notify-send "Screen is being recorded." --urgency low -i $REC_ICON_PATH
+    if [ -z "$2" ]; then
+        notify-send "Screen is being recorded." --urgency low -i $REC_ICON_PATH
+    fi
 
     # --- Hardware decoding (for NVIDIA GPU) ---
     # Needs ffmpeg compiled with --enable-nvenc
@@ -46,7 +53,9 @@ if [ -z "$pid" ]; then
     # --- Hardware decoding (for Intel integrated graphics) ---
     ffmpeg -vaapi_device /dev/dri/renderD128 -f x11grab -video_size $SCREEN_RESOLUTION -framerate 15 -i :0 -vf "format=nv12,hwupload" -c:v h264_vaapi -qp 24 -y $FILENAME
 
-    notify-send "Screen recording over." --urgency low -i $REC_ICON_PATH
+    if [ -z "$2" ]; then
+        notify-send "Screen recording over." --urgency low -i $REC_ICON_PATH
+    fi
 else
     # Stop recording
     kill $pid
