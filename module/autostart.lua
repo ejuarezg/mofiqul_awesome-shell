@@ -8,11 +8,14 @@ local startup_apps = {
 	"picom -b --experimental-backends --config " .. config_dir .. "configurations/picom.conf",
 	"redshift -t 6500:3500 -l " .. os.getenv("GEOLOCATION"),
 	"udiskie",
-	"xidlehook --not-when-fullscreen --not-when-audio  --timer 300 'xbacklight -set 1' 'xbacklight -set 50' --timer 60 'xbacklight -set 50;" ..default_apps.lock_screen .." ' '' --timer 900 'systemctl suspend'  ''",
+        -- Note: 3600 seconds is 1 hour
+	"xidlehook --not-when-fullscreen --not-when-audio --timer 900 'xbacklight -set 1' 'xbacklight -set 50' --timer 15 'xbacklight -set 50; " .. default_apps.lock_screen .. "' '' --timer 14400 'systemctl suspend' ''",
 	-- "$HOME/.local/bin/xinput-tab",
 	-- "xbacklight -set 45",
     -- Add your startup programs here
     "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1",
+    "xrandr --output HDMI-A-3 --off",
+    "xset s off -dpms",
 }
 
 
@@ -27,7 +30,7 @@ local spawn_once = function (cmd)
     -- Find the command when given an absolute path
     local lastslash = findme:find("/[^/]*$")
     if lastslash then
-        -- NOTE pgrep only cares about the first 15 characters of a command
+        -- pgrep only cares about the first 15 characters of a command
         findme = findme:sub(lastslash + 1, lastslash + 15)
     end
 
