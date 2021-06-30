@@ -8,6 +8,8 @@ local create_button = require("widgets.buttons.create-button")
 local clickable_container = require("widgets.clickable-container")
 local helpers = require("libs.helpers")
 local dpi = beautiful.xresources.apply_dpi
+local config_dir = filesystem.get_configuration_dir()
+local home_dir = os.getenv("HOME")
 
 local screeh_shot_tool = function (s)
 	
@@ -278,7 +280,7 @@ local screeh_shot_tool = function (s)
 		awesome.emit_signal("control-center::hide")
 		helpers.sleep(.2)
 
-		local screen_shot_dir = "~/Pictures/Screenshots/"
+		local screen_shot_dir = home_dir .. "/Pictures/Screenshots/"
 		
 		if not filesystem.dir_readable(screen_shot_dir) then
 			awful.spawn.with_shell("mkdir -p " .. screen_shot_dir)
@@ -358,9 +360,9 @@ local screeh_shot_tool = function (s)
 	local is_vedio_capturing = false
 	button_video_capture:connect_signal("button::press", function (self, _, _, button)
 		if button == 1 then
-			local video_dir = "~/Videos/Recordings/"
+			local video_dir = home_dir .. "/Videos/Recordings/"
 			local file_name = os.date("%Y-%m-%d_%H-%M-%S") .. ".mp4"
-			local command = "ffmpeg -video_size 1366x768 -framerate 30 -f x11grab -i :0.0+0,0 " .. video_dir .. file_name
+			local command = config_dir .. "scripts/screenrec.sh " .. video_dir .. file_name .. " notify-off"
 			local btn_text_widget = self:get_children_by_id("buttontext")[1]
 			if not is_vedio_capturing then
 				awful.spawn.with_shell(command)
@@ -368,10 +370,10 @@ local screeh_shot_tool = function (s)
 				is_vedio_capturing = true
 				screen_record_notify("Screen Recording Started", "")
 			else 
-				awful.spawn.with_shell("killall ffmpeg")
+				awful.spawn.with_shell(command)
 				is_vedio_capturing = false
 				btn_text_widget:set_text("Start Recording")
-				screen_record_notify("Screen Recording Stoped", "File saved to " .. video_dir .. file_name)
+				screen_record_notify("Screen Recording Stoped", "File saved to " .. (video_dir .. file_name):gsub(home_dir, "~"))
 			end
 		end
 	end)
