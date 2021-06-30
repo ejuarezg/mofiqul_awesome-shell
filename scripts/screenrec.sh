@@ -10,7 +10,7 @@ RECORDINGS_DIR=~/Videos/Recordings
 # >> Manually
 # SCREEN_RESOLUTION=1920x1080
 # >> Automatically
-SCREEN_RESOLUTION="$(xrandr | grep -Po '(?<=primary )[0-9x]*')"
+SCREEN_RESOLUTION="$(xrandr | grep -Po '(?<=connected )[0-9x]*')"
 # >> TODO select area to record with `slop`
 # --- Audio ---
 # Comment out both if you want to disable sound
