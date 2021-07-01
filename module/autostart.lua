@@ -5,17 +5,17 @@ local naughty = require("naughty")
 local config_dir = filesystem.get_configuration_dir()
 local default_apps = require("configurations.default-apps")
 local startup_apps = {
-	"picom -b --experimental-backends --config " .. config_dir .. "configurations/picom.conf",
-	"redshift -t 6500:3500 -l " .. os.getenv("GEOLOCATION"),
-	"udiskie",
-        -- Note: 3600 seconds is 1 hour
-	"xidlehook --not-when-fullscreen --not-when-audio --timer 900 'xbacklight -set 1' 'xbacklight -set 50' --timer 15 'xbacklight -set 50; " .. default_apps.lock_screen .. "' '' --timer 14400 'systemctl suspend' ''",
-	-- "$HOME/.local/bin/xinput-tab",
-	-- "xbacklight -set 45",
     -- Add your startup programs here
+    "picom -b --experimental-backends --config " .. config_dir .. "configurations/picom.conf",
+    "redshift -t 6500:3500 -l " .. os.getenv("GEOLOCATION"),
+    "udiskie",
+    -- 3600 seconds is 1 hour
+    "xidlehook --not-when-fullscreen --not-when-audio --timer 900 'xset dpms force off' '' --timer 15 'xset dpms force on; " .. default_apps.lock_screen .. "' '' --timer 900 'xset dpms force off' '' --timer 10800 'systemctl suspend' ''",
     "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1",
     "xrandr --output HDMI-A-3 --off",
-    "xset s off -dpms",
+    -- From ArchWiki: https://wiki.archlinux.org/title/Display_Power_Management_Signaling
+    -- Set the blanking timer longer than the suspend timer used in xidlehook
+    "xset dpms 0 0 0 && xset s 28800 28800",
 }
 
 
