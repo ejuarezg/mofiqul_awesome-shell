@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Disable console switching
+physlock -l
+
 B='#282828FF'  # blank
 C='#ffffffFF'  # clear ish
 D='#0A7ACAFF'  # default
@@ -9,8 +12,9 @@ V='#FFAF00FF'  # verifying
 VT='#608B4EFF'
 HL='#FA4616FF'
 
-
-i3lock                          \
+# NOTE The no fork flag is really important. Physlock will not work
+# if it is not specified.
+i3lock --nofork                 \
     --radius 60                 \
     --ind-pos="w/2:h/2"         \
     --time-pos="w/2:h/2-200"    \
@@ -46,4 +50,8 @@ i3lock                          \
     --time-size=75              \
     --date-size=30              \
     --verif-size=20             \
-    --wrong-size=20             \
+    --wrong-size=20
+
+# Enable console switching
+physlock -L
+

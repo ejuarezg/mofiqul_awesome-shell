@@ -19,6 +19,8 @@ This is a collection of [awesome wm](https://awesomewm.org/) configuration files
 11. [i3lock-color](https://github.com/Raymo111/i3lock-color)
 12. curl
 13. [redshift](https://archlinux.org/packages/community/x86_64/redshift/)
+14. [polkit-gnome (optional)](https://archlinux.org/packages/community/x86_64/polkit-gnome/)
+15. [physlock](https://archlinux.org/packages/community/x86_64/physlock/)
 
 ## ⬇️ Installation
 Clone the this repository 
