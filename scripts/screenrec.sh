@@ -15,7 +15,8 @@ fi
 # >> Manually
 # SCREEN_RESOLUTION=1920x1080
 # >> Automatically
-SCREEN_RESOLUTION="$(xrandr | grep -Po '(?<=connected )[0-9x]*')"
+# Sauce: https://superuser.com/questions/196532/how-do-i-find-out-my-screen-resolution-from-a-shell-script
+SCREEN_RESOLUTION="$(xrandr --current -q | sed -n 's/.* connected \([0-9]*\)x\([0-9]*\)+.*/\1x\2/p')"
 # >> TODO select area to record with `slop`
 # --- Audio ---
 # Comment out both if you want to disable sound
